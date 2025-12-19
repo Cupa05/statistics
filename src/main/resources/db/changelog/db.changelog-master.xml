@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="001-create-user-table" author="adam.zagoni">
+        <createTable tableName="user">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="name" type="VARCHAR(300)" >
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="birth_date" type="DATE" >
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="present_value" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="002-insert-sample-user" author="adam.zagoni" >
+        <insert tableName="user">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Zágoni Ádám"/>
+            <column name="birth_date" value="2005-10-09"/>
+            <column name="present_value" value="0"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
