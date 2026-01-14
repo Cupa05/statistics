@@ -1,5 +1,7 @@
 package com.example.statistics.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +25,11 @@ public class UserController {
     public ResponseEntity<?> saveUser(@RequestBody UserDto user) {
         userService.saveUser(user);
         return ResponseEntity.ok(user);
+    }
+
+    @GetMapping("/list")
+    public ResponseEntity<List<User>> getAllUsers() {
+        return ResponseEntity.ok(userService.getAllUsers());
     }
 
     @GetMapping("/id")

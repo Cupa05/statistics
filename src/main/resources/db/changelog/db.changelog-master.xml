@@ -25,6 +25,7 @@
         </createTable>
     </changeSet>
 
+    <!--TODO Törölni amikor elkészült a projekt-->
     <changeSet id="002-insert-sample-user" author="adam.zagoni" >
         <insert tableName="user">
             <column name="id" valueNumeric="1"/>
