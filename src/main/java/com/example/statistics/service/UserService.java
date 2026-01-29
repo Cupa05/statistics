@@ -10,9 +10,6 @@ import com.example.statistics.entity.User;
 import com.example.statistics.exception.UserAlreadyExistsException;
 import com.example.statistics.repository.UserRepository;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @Service
 public class UserService {
     @Autowired
