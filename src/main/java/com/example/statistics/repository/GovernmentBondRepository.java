@@ -1,13 +1,20 @@
 package com.example.statistics.repository;
 
+import java.time.OffsetDateTime;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.example.statistics.entity.GovernmentBond;
 
 @Repository
-interface GovernmentBondRepository extends JpaRepository<GovernmentBond, Long> {
-    // TODO-Következő task PF-13
-    // @Query("SELECT gb FROM GovernmentBond gb WHERE gb.id = :id")
-    // GovernmentBond getGovernmentBondById(Long id);
+public interface GovernmentBondRepository extends JpaRepository<GovernmentBond, Long> {
+
+    @Query("SELECT gb FROM GovernmentBond gb WHERE gb.id = :id")
+    GovernmentBond getGovernmentBondById(@Param("id") Long id);
+
+    List<GovernmentBond> findByStartDateBetween(OffsetDateTime startDate, OffsetDateTime endDate);
 }

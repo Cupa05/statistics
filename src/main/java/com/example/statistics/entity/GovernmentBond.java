@@ -7,6 +7,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import com.example.statistics.dto.GovernmentBondDto;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,4 +32,16 @@ public class GovernmentBond {
     private Double interestRate;
 
     private Double depositCapitalRate;
+
+    public GovernmentBond(GovernmentBondDto dto) {
+
+        this.name = dto.getName();
+        this.description = dto.getDescription();
+        this.startDate = dto.getStartDate();
+        this.endDate = dto.getEndDate();
+        this.interestRate = dto.getInterestRate() != null ? dto.getInterestRate().doubleValue() : null;
+        this.depositCapitalRate = dto.getDepositCapitalRate() != null
+                ? dto.getDepositCapitalRate().doubleValue()
+                : null;
+    }
 }
