@@ -25,8 +25,8 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="002-create-governmentBond-table" author="adam.zagoni">
-        <createTable tableName="governmentBond">
+    <changeSet id="002-create-government_bond-table" author="adam.zagoni">
+        <createTable tableName="government_bond">
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -52,6 +52,30 @@
             </column>
 
             <column name="deposit_capital_rate" type="FLOAT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="003-create-interest_payment-table" author="adam.zagoni">
+        <createTable tableName="interest_payment">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="government_bond_id" type="BIGINT" >
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="start_date" type="DATE" >
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="turn_date" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="days_since_previous_round" type="INTEGER">
                 <constraints nullable="false"/>
             </column>
         </createTable>

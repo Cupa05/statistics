@@ -1,6 +1,6 @@
 package com.example.statistics.entity;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,9 +25,9 @@ public class GovernmentBond {
 
     private String description;
 
-    private OffsetDateTime startDate;
+    private LocalDate startDate;
 
-    private OffsetDateTime endDate;
+    private LocalDate endDate;
 
     private Double interestRate;
 

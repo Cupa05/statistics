@@ -1,6 +1,6 @@
 package com.example.statistics.dto;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDate;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,8 +10,8 @@ import lombok.Setter;
 public class GovernmentBondDto {
     private String name;
     private String description;
-    private OffsetDateTime StartDate;
-    private OffsetDateTime endDate;
+    private LocalDate StartDate;
+    private LocalDate endDate;
     private Float interestRate;
     private Float depositCapitalRate;
 
