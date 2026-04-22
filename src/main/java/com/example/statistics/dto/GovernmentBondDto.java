@@ -12,7 +12,7 @@ public class GovernmentBondDto {
     private String description;
     private LocalDate StartDate;
     private LocalDate endDate;
-    private Float interestRate;
-    private Float depositCapitalRate;
+    private Double interestRate;
+    private Double depositCapitalRate;
 
 }
