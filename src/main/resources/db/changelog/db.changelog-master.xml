@@ -79,6 +79,14 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
+        <addForeignKeyConstraint
+            baseTableName="interest_payment"
+            baseColumnNames="government_bond_id"
+            constraintName="fk_interest_payment_government_bond"
+            referencedTableName="government_bond"
+            referencedColumnNames="id"
+
+        />
     </changeSet>
 
     <!--TODO Törölni amikor elkészült a projekt-->

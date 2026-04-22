@@ -15,8 +15,10 @@ import jakarta.persistence.Table;
 import com.example.statistics.dto.GovernmentBondDto;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@NoArgsConstructor
 @Entity
 @Getter
 @Setter

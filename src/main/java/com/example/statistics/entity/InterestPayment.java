@@ -11,12 +11,16 @@ import jakarta.persistence.ManyToOne;
 
 import com.example.statistics.dto.InterestPaymentDto;
 
+import jakarta.persistence.Table;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@NoArgsConstructor
 @Entity
 @Getter
 @Setter
+@Table(name = "interest_payment")
 public class InterestPayment {
 
     @Id
